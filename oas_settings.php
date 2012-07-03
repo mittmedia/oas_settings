@@ -34,17 +34,17 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 */
 
-require_once( 'wp_mvc-1.0.0/init.php' );
+require_once( 'wp_mvc/init.php' );
 
-$oas_settings = new \WpMvc\Application();
+$oas_settings_app = new \WpMvc\Application();
 
-$oas_settings->init( 'OasSettings', WP_PLUGIN_DIR . '/oas_settings' );
+$oas_settings_app->init( 'OasSettings', WP_PLUGIN_DIR . '/oas_settings' );
 
 // WP: Add pages
 add_action( "network_admin_menu", "oas_settings" );
-function unfair_highlight()
+function oas_settings()
 {
-  add_submenu_page( 'settings.php', 'OAS settings Settings', 'OAS settings', 'Super Admin', 'oas_settings_settings', 'oas_settings_settings_page');
+  add_submenu_page( 'settings.php', 'OAS settings Settings', 'OAS settings', 'Super Admin', 'oas_settings_settings', 'oas_settings_page');
 }
 
 function oas_settings_page()

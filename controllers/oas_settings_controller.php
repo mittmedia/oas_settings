@@ -8,12 +8,7 @@ namespace OasSettings
     {
       global $site;
 
-      #$site = \WpMvc\Site::find( 1 );
-
-      $blogs = Blog::all();
-      #$footer = \WpMvc\CustomFooter::virgin();
-
-      #$this->create_attribute_if_not_exists( $site, 'footer_content' );
+      $site = \WpMvc\Site::find( 1 );
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $site->takes_post( $_POST['site'] );
