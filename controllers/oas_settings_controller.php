@@ -9,6 +9,14 @@ namespace OasSettings
       global $site;
 
       $site = \WpMvc\Site::find( 1 );
+      $this->create_attribute_if_not_exists( $site, 'oas_active' );
+      $this->create_attribute_if_not_exists( $site, 'oas_server' );
+      $this->create_attribute_if_not_exists( $site, 'oas_script_url' );
+      $this->create_attribute_if_not_exists( $site, 'oas_sitepage' );
+      $this->create_attribute_if_not_exists( $site, 'oas_site' );
+      $this->create_attribute_if_not_exists( $site, 'oas_position' );
+      $this->create_attribute_if_not_exists( $site, 'oas_noscript_url' );
+      $this->create_attribute_if_not_exists( $site, 'oas_html_block' );
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $site->takes_post( $_POST['site'] );
