@@ -18,7 +18,7 @@ namespace OasSettings
       $this->create_attribute_if_not_exists( $site, 'oas_noscript_url' );
       $this->create_attribute_if_not_exists( $site, 'oas_html_block' );
 
-      if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'oas_settings_settings' ) {
         $site->takes_post( $_POST['site'] );
 
         $site->save();
