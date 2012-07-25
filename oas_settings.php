@@ -44,7 +44,7 @@ $oas_settings_app->init( 'OasSettings', WP_PLUGIN_DIR . '/oas_settings' );
 add_action( "network_admin_menu", "oas_settings" );
 function oas_settings()
 {
-  add_submenu_page( 'settings.php', 'OAS settings Settings', 'OAS settings', 'Super Admin', 'oas_settings_settings', 'oas_settings_page');
+  add_submenu_page( 'settings.php', 'OAS settings Settings', 'OAS settings', 'manage_network', 'oas_settings_settings', 'oas_settings_page');
 }
 
 function oas_settings_page()
